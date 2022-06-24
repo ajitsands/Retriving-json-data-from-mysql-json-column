@@ -1,4 +1,4 @@
-// 1st Method
+-- 1st Method
 select ids, 
        form_data->>'$.v_cpr' as cpr,
        form_data->>'$.v_mem_name' as name
@@ -18,7 +18,7 @@ select ids,
   ids  cpr    name
   1    12345  "Anisha" 
   
- //Second Method      
+ -- Second Method      
        
   SELECT JSON_EXTRACT('{"name": "John", "age": 30}', '$.name');  
   Output
@@ -39,7 +39,7 @@ SELECT JSON_EXTRACT(form_data, '$.v_mem_name') from test;
 SELECT JSON_UNQUOTE(JSON_EXTRACT(form_data, '$.v_mem_name')) as name,JSON_UNQUOTE(JSON_EXTRACT(form_data, '$.v_cpr')) as name  from test;
 
 
-// Table Structure
+-- Table Structure
 
 CREATE TABLE `test` (
   `ids` int(11) NOT NULL,
@@ -47,17 +47,17 @@ CREATE TABLE `test` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
-// Column form_data
+-- Column form_data
 
 {
-    "v_cpr": "1258965", //fetched data
+    "v_cpr": "1258965",   -- fetched data
     "v_dob": "1973-05-25",
     "action": "member_registration",
     "v_gender": "Male",
     "v_cpr_exp": "1973-05-25",
     "v_email_id": "aji@a.com",
     "v_employer": "SandsLab",
-    "v_mem_name": "Ajit",//fetched data
+    "v_mem_name": "Ajit",  -- fetched data
     "v_user_name": "anisha",
     "v_contact_no": "123456",
     "v_driving_no": "19730525",
